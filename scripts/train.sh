@@ -25,7 +25,8 @@ module purge
 module load anaconda3
 
 # Activate environment
-source activate bert-sentiment
+source /shared/EL9/explorer/anaconda3/2024.06/etc/profile.d/conda.sh
+conda activate bert-sentiment
 
 # Print GPU info
 echo ""
