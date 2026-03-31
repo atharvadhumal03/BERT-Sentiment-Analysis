@@ -40,7 +40,7 @@ cd $SLURM_SUBMIT_DIR
 mkdir -p logs data/tokenized output
 
 # Load .env if present (e.g. WANDB_API_KEY)
-[ -f "$SLURM_SUBMIT_DIR/.env" ] && export $(cat "$SLURM_SUBMIT_DIR/.env" | xargs)
+[ -f "$SLURM_SUBMIT_DIR/.env" ] && set -a && source "$SLURM_SUBMIT_DIR/.env" && set +a
 
 export DATA_CACHE_DIR="$SLURM_SUBMIT_DIR/data/tokenized"
 export OUTPUT_DIR="$SLURM_SUBMIT_DIR/output/run_${SLURM_JOB_ID}"
