@@ -2,7 +2,7 @@ import os
 from datasets import load_dataset, load_from_disk
 from transformers import AutoTokenizer
 
-tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased", local_files_only=True)
 
 def tokenize(batch):
     texts = [t + " " + c for t, c in zip(batch['title'], batch['content'])]

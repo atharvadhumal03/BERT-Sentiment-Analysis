@@ -35,7 +35,7 @@ def main():
     print(f"Train: {len(dataset['train'])} | Test: {len(dataset['test'])}")
 
     model = AutoModelForSequenceClassification.from_pretrained(
-        "bert-base-uncased", num_labels=2
+        "bert-base-uncased", num_labels=2, local_files_only=True
     )
 
     training_args = TrainingArguments(
