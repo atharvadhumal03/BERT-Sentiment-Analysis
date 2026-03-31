@@ -43,14 +43,11 @@ mkdir -p logs data/tokenized output
 [ -f "$SLURM_SUBMIT_DIR/.env" ] && export $(cat "$SLURM_SUBMIT_DIR/.env" | xargs)
 
 export DATA_CACHE_DIR="$SLURM_SUBMIT_DIR/data/tokenized"
-export OUTPUT_DIR="$SLURM_SUBMIT_DIR/output"
+export OUTPUT_DIR="$SLURM_SUBMIT_DIR/output/run_${SLURM_JOB_ID}"
 
 export WANDB_PROJECT="bert-sentiment-amazon"
 export WANDB_RUN_NAME="bert-base-ep3-lr2e5-$(date +%Y%m%d_%H%M%S)"
 export PYTHONUNBUFFERED=1
-# Route W&B through the cluster HTTP proxy
-export HTTPS_PROXY=http://10.99.0.130:3128
-export HTTP_PROXY=http://10.99.0.130:3128
 
 echo "Starting training..."
 echo "========================================"
