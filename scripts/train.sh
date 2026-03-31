@@ -47,6 +47,8 @@ export OUTPUT_DIR="$SLURM_SUBMIT_DIR/output"
 
 export WANDB_PROJECT="bert-sentiment-amazon"
 export WANDB_RUN_NAME="bert-base-ep3-lr2e5-$(date +%Y%m%d_%H%M%S)"
+export WANDB_MODE="offline"
+export PYTHONUNBUFFERED=1
 
 echo "Starting training..."
 echo "========================================"
