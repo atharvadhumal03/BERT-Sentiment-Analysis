@@ -52,7 +52,7 @@ echo "Starting training..."
 echo "========================================"
 
 # Run training
-python src/train.py
+python -u src/train.py
 
 echo ""
 echo "========================================"
