@@ -26,6 +26,7 @@ def main():
     data_cache_dir = os.environ.get("DATA_CACHE_DIR", "./data/tokenized")
     output_dir = os.environ.get("OUTPUT_DIR", "./output")
     wandb_run_name = os.environ.get("WANDB_RUN_NAME", None)
+    resume_from_checkpoint = os.environ.get("RESUME_FROM_CHECKPOINT", None)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
@@ -67,7 +68,9 @@ def main():
         compute_metrics=compute_metrics,
     )
 
-    trainer.train()
+    if resume_from_checkpoint:
+        print(f"Resuming from checkpoint: {resume_from_checkpoint}")
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
 
     print("\nFinal evaluation:")
     results = trainer.evaluate()

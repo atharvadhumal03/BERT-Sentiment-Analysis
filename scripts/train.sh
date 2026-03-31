@@ -50,6 +50,9 @@ export WANDB_RUN_NAME="bert-base-ep3-lr2e5-$(date +%Y%m%d_%H%M%S)"
 export WANDB_INIT_TIMEOUT=300
 export PYTHONUNBUFFERED=1
 
+# Resume from checkpoint if one exists (set to "" to start fresh)
+export RESUME_FROM_CHECKPOINT="$SLURM_SUBMIT_DIR/output/checkpoint-26000"
+
 echo "Starting training..."
 echo "========================================"
 
