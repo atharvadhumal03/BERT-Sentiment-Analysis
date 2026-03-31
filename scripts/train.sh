@@ -38,8 +38,14 @@ cd $SLURM_SUBMIT_DIR
 
 mkdir -p logs data/tokenized output
 
+# Load .env if present (e.g. WANDB_API_KEY)
+[ -f "$SLURM_SUBMIT_DIR/.env" ] && export $(cat "$SLURM_SUBMIT_DIR/.env" | xargs)
+
 export DATA_CACHE_DIR="$SLURM_SUBMIT_DIR/data/tokenized"
 export OUTPUT_DIR="$SLURM_SUBMIT_DIR/output"
+
+export WANDB_PROJECT="bert-sentiment-amazon"
+export WANDB_RUN_NAME="bert-base-ep3-lr2e5-$(date +%Y%m%d_%H%M%S)"
 
 echo "Starting training..."
 echo "========================================"

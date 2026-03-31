@@ -97,6 +97,7 @@ dependencies:
       - requests==2.32.5
       - rich==14.3.3
       - safetensors==0.7.0
+      - scikit-learn
       - shellingham==1.5.4
       - sympy==1.14.0
       - tokenizers==0.22.2
@@ -106,6 +107,7 @@ dependencies:
       - typer==0.24.1
       - tzdata==2025.3
       - urllib3==2.6.3
+      - wandb
       - xxhash==3.6.0
       - yarl==1.23.0
 prefix: /opt/homebrew/Caskroom/miniconda/base/envs/bert-sentiment
