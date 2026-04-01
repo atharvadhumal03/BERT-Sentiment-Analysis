@@ -51,7 +51,7 @@ export WANDB_INIT_TIMEOUT=300
 export PYTHONUNBUFFERED=1
 
 # Resume from checkpoint if one exists (set to "" to start fresh)
-export RESUME_FROM_CHECKPOINT="$SLURM_SUBMIT_DIR/output/checkpoint-26000"
+export RESUME_FROM_CHECKPOINT="$SLURM_SUBMIT_DIR/output/run_5537884/checkpoint-112000"
 
 echo "Starting training..."
 echo "========================================"
