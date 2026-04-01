@@ -10,7 +10,7 @@ Fine-tuning `bert-base-uncased` for binary sentiment classification on the [Amaz
 | **Accuracy** | **97.06%** |
 | Test samples | 400,000 |
 
-Training curves available on [Weights & Biases](https://wandb.ai/atharva-dhumal07-student/bert-sentiment-amazon).
+Training curves available on [Weights & Biases](https://wandb.ai/atharva-dhumal07-student/bert-sentiment-amazon). Model available on [HuggingFace Hub](https://huggingface.co/atharvadhumal/bert-amazon-polarity).
 
 ## Setup
 
@@ -24,7 +24,7 @@ conda activate bert-sentiment
 ### Inference
 
 ```bash
-python src/inference.py --model ./output/run_5545887/best_model \
+python src/inference.py --model atharvadhumal/bert-amazon-polarity \
   --text "This product is absolutely amazing!" \
            "Terrible quality, broke after one day."
 ```

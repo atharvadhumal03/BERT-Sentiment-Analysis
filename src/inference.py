@@ -37,7 +37,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="BERT Sentiment Inference")
-    parser.add_argument("--model", default=os.environ.get("MODEL_PATH", "./output/run_5545887/best_model"))
+    parser.add_argument("--model", default=os.environ.get("MODEL_PATH", "atharvadhumal/bert-amazon-polarity"))
     parser.add_argument("--text", nargs="+", help="One or more review texts to classify")
     args = parser.parse_args()
 
